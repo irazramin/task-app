@@ -1,21 +1,9 @@
 import React from 'react';
 import SingleTask from "../../Shared/SingleTask";
+import useFetch from "../../hooks/useFetch";
 
 const Home = () => {
-    const tasks = [
-        {
-            id:1,
-            task:"asdkjajk asjhsa askjdhas skajda"
-        },
-        {
-            id:2,
-            task:"asdkjajk asjhsa askjdhas skajda"
-        },
-        {
-            id:3,
-            task:"asdkjajk asjhsa askjdhas skajda"
-        },
-    ]
+  const [tasks] = useFetch();
     return (
         <div className='lg:w-[60%] mx-auto'>
             <h2>Total completed tasks {0}</h2>
