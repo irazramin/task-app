@@ -46,10 +46,10 @@ const Header = () => {
         mt-2
         lg:mt-0
         mr-1
+        text-xl
+        font-bold
       " href="#">
-                        <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png"
-                             alt=""
-                             loading="lazy"/>
+                       Make Task
                     </a>
                     <ul className="navbar-nav flex flex-col pl-0 list-style-none mr-auto">
                         <li className="nav-item p-2">

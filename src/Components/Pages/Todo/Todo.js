@@ -5,7 +5,6 @@ import useFetch from "../../hooks/useFetch";
 const Todo = () => {
     const [showInput, setShowInput] = useState(false);
     const [task, setTask] = useState('');
-    const taskInput = useRef();
     const [tasks] = useFetch();
 
     // const tasks = [
