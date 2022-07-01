@@ -1,11 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
+import Calendar from 'react-calendar';
+import "../../../App.css"
+const Calendars = () => {
+    const [value, onChange] = useState(new Date());
 
-const Calendar = () => {
     return (
-        <div>
-
+        <div className='flex justify-center items-center height'>
+            <Calendar onChange={onChange} value={value} />
         </div>
     );
 };
 
-export default Calendar;
+export default Calendars;

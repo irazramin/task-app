@@ -4,11 +4,20 @@ import useFetch from "../../hooks/useFetch";
 import {useQuery} from "react-query";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faClose } from '@fortawesome/free-solid-svg-icons'
+import "../../../App.css"
+import TopBarProgress from "react-topbar-progress-indicator";
+TopBarProgress.config({
+    barColors: {
+        "0": "blue",
+        "1.0": "blue"
+    },
+    shadowBlur: 5
+});
 const Todo = () => {
 
     const [showInput, setShowInput] = useState(false);
     const [task, setTask] = useState('');
-    const [tasks, renderFlag, setRenderFlag] = useFetch();
+    const [tasks, renderFlag, setRenderFlag,isLoading] = useFetch();
 
     useEffect(() => {
         console.log('rendered...');
@@ -34,7 +43,9 @@ const Todo = () => {
     }
 
     return (
-        <div className='mt-20 mx-auto w-[70%]'>
+        <div className='my-20 mx-auto w-[70%] height'>
+            {isLoading && <TopBarProgress />}
+
             <div className='lg:w-[50%] mx-auto mt-10'>
                 <div className='border p-6'>
                     <h4 className='text-center text-lg font-bold my-3'>All tasks </h4>

@@ -4,17 +4,28 @@ import useFetch from "../../hooks/useFetch";
 import {Link} from "react-router-dom";
 import {useQuery} from "react-query";
 import CompletedTask from "../../Shared/CompletedTask";
-
+import "../../../App.css"
+import TopBarProgress from "react-topbar-progress-indicator";
+TopBarProgress.config({
+    barColors: {
+        "0": "blue",
+        "1.0": "blue"
+    },
+    shadowBlur: 5
+});
 const Home = () => {
-    const [tasks, renderFlag, setRenderFlag] = useFetch();
+    const [tasks, renderFlag, setRenderFlag,isLoading] = useFetch();
     const completedTask = tasks.filter(task => task.completeTask);
 
     useEffect(() => {
         console.log('rendered...');
     }, [renderFlag]);
 
+
+
     return (
-        <div className='md:w-[70%] mx-auto px-12 my-10'>
+        <div className='md:w-[70%] mx-auto px-12 my-20 height'>
+            {isLoading && <TopBarProgress />}
             <h2 className='my-10 text-lg font-bold text-center'>Total completed tasks : {completedTask.length}</h2>
             <div className='grid lg:grid-cols-2  grid-cols-1 mt-20 gap-10'>
                 <div >
