@@ -1,27 +1,25 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import SingleTask from "../../Shared/SingleTask";
 import useFetch from "../../hooks/useFetch";
 import {Link} from "react-router-dom";
+import {useQuery} from "react-query";
+import CompletedTask from "../../Shared/CompletedTask";
 
 const Home = () => {
-  const [tasks] = useFetch();
+    const [tasks, renderFlag, setRenderFlag] = useFetch();
+    const completedTask = tasks.filter(task => task.completeTask);
+
+    useEffect(() => {
+        console.log('rendered...');
+    }, [renderFlag]);
+
     return (
         <div className='md:w-[70%] mx-auto px-12'>
-            <h2>Total completed tasks {0}</h2>
+            <h2 className='my-10 text-lg font-bold text-center'>Total completed tasks : {completedTask.length}</h2>
             <div className='grid lg:grid-cols-2  grid-cols-1 mt-20 gap-10'>
                 <div className='border p-6'>
                         <h4 className='text-center text-lg font-bold'>Completed tasks </h4>
-                    {tasks.map(task =>{
-                        return(
-                            <div className='m-4'>
-                                <div className='flex justify-between items-center'>
-                                    <h3 className='line-through'>{task.task}</h3>
-                                    <button >X</button>
-                                </div>
-
-                            </div>
-                        )
-                    })}
+                    {completedTask.map(task => <CompletedTask task={task} />)}
                   <div className='text-center'>
                     <Link to='/completeTask'>
                         <button type="button"
@@ -35,7 +33,9 @@ const Home = () => {
                     <h4 className='text-center text-lg font-bold'>All tasks </h4>
                     {tasks.map(task =>{
                         return(
-                           <SingleTask task={task} key={task.id} />
+                           <SingleTask task={task} key={task._id} onComplete={(resp) => {
+                               setRenderFlag(resp.timestamp);
+                           }}/>
                         )
                     })}
                     <div className='text-center'>

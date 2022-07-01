@@ -17,7 +17,7 @@ const Header = () => {
   shadow-lg
   navbar navbar-expand-lg navbar-light
   ">
-            <div className="container-fluid w-full flex flex-wrap items-center justify-between px-6">
+            <div className=" mx-auto w-[80%] flex flex-wrap items-center justify-between px-6">
                 <button className="
       navbar-toggler
       text-gray-500

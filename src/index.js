@@ -6,13 +6,22 @@ import reportWebVitals from './reportWebVitals';
 import 'tw-elements';
 import { BrowserRouter } from "react-router-dom";
 
+import {
+    QueryClient,
+    QueryClientProvider
+} from 'react-query';
+
+const queryClient = new QueryClient();
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-      <BrowserRouter>
-          <App />
-      </BrowserRouter>
-  </React.StrictMode>
+    <BrowserRouter>
+        <QueryClientProvider client={queryClient}>
+            <React.StrictMode>
+                <App />
+            </React.StrictMode>
+        </QueryClientProvider>
+    </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
