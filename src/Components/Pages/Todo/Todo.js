@@ -3,7 +3,7 @@ import SingleTask from "../../Shared/SingleTask";
 import useFetch from "../../hooks/useFetch";
 import {useQuery} from "react-query";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faPlus, faClose } from '@fortawesome/free-solid-svg-icons'
 const Todo = () => {
 
     const [showInput, setShowInput] = useState(false);
@@ -71,7 +71,9 @@ const Todo = () => {
                                         />
                                     </form>
                                 </div>
-                                <button className='mx-5 my-5' onClick={() => setShowInput(false)}>X</button>
+                                <button className='mx-5 -mt-1' onClick={() => setShowInput(false)}>
+                                    <FontAwesomeIcon icon={faClose} className='text-gray-800 text-2xl text-red-500' />
+                                </button>
                             </div>
                         </div> : <div className='flex justify-center'>
                             <button type="button"

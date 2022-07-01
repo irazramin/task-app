@@ -12,7 +12,7 @@ const useFetch = () => {
             });
     },[renderFlag])
 
-    return [tasks, renderFlag, setRenderFlag]
+    return [tasks, renderFlag, setRenderFlag];
 };
 
 export default useFetch;

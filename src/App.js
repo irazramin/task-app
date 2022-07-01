@@ -6,6 +6,7 @@ import Home from "./Components/Pages/Home/Home";
 import Todo from "./Components/Pages/Todo/Todo";
 import CompleteTask from "./Components/Pages/CompleteTask/CompleteTask";
 import Calendar from "./Components/Pages/Calendar/Calendar";
+import Footer from "./Components/Shared/Footer";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path='/completeTask' element={<CompleteTask/>} />
             <Route path='/calendar' element={<Calendar/>} />
         </Routes>
+        <Footer />
     </div>
   );
 }

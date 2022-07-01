@@ -34,9 +34,8 @@ const SingleTask = ({task, onComplete}) => {
             .then(res => res.json())
             .then(data =>{
                 console.log(data)
-                // onComplete(data)
+                onComplete(data)
             })
-        setTaskIn({})
     }
 
     const deleteTask = () =>{
