@@ -43,11 +43,11 @@ const Todo = () => {
     }
 
     return (
-        <div className='my-20 mx-auto w-[70%] height'>
+        <div className='my-20 mx-auto lg:w-[70%] height w-[95%]'>
             {isLoading && <TopBarProgress />}
 
-            <div className='lg:w-[50%] mx-auto mt-10'>
-                <div className='border p-6'>
+            <div className='lg:w-[50%] w-[95%] mx-auto mt-10'>
+                <div className='border lg:p-6 p-2'>
                     <h4 className='text-center text-lg font-bold my-3'>All tasks </h4>
 
                     {showInput ?

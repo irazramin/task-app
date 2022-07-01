@@ -16,9 +16,9 @@ const CompletedTask = ({task,onComplete}) => {
     }
     return (
         <div>
-            <div className='m-4'>
+            <div className='lg:m-5 m-3'>
                 <div className='flex justify-between items-center p-5 rounded-lg shadow-lg bg-white'>
-                    <h3 className='line-through'>{task.task}</h3>
+                    <h3 className='line-through'>{task.task.length > 25 ? task.task.slice(0,25)+"...." : task.task}</h3>
                     <button onClick={deleteTask} className='mx-2'><FontAwesomeIcon icon={faTrashAlt} /></button>
 
                 </div>

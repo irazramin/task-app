@@ -24,12 +24,12 @@ const Home = () => {
 
 
     return (
-        <div className='md:w-[70%] mx-auto px-12 my-20 height'>
+        <div className='lg:w-[70%] mx-auto lg:px-12 px-4 my-20 height w-[95%]'>
             {isLoading && <TopBarProgress />}
             <h2 className='my-10 text-lg font-bold text-center'>Total completed tasks : {completedTask.length}</h2>
             <div className='grid lg:grid-cols-2  grid-cols-1 mt-20 gap-10'>
                 <div >
-                        <div className='border p-6'>
+                        <div className='border lg:p-6 p-2'>
                             <h4 className='text-center text-lg font-bold'>Completed tasks </h4>
                             {completedTask.length === 0 ? <h2 className='text-center my-20'>No complete task found</h2> : <>
 
@@ -49,7 +49,7 @@ const Home = () => {
                         </div>
                 </div>
 
-                <div className='border p-6'>
+                <div className='border lg:p-6 p-2'>
                     <h4 className='text-center text-lg font-bold'>All tasks </h4>
                     {tasks.map(task =>{
                         return(

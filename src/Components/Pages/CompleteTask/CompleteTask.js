@@ -16,11 +16,11 @@ const CompleteTask = () => {
 
     const completedTask = tasks.filter(task => task.completeTask);
     return (
-        <div className='w-[70%] mx-auto my-20  height'>
+        <div className='lg:w-[70%] w-[95%] mx-auto my-20  height'>
             {isLoading && <TopBarProgress />}
 
-            <div className='lg:w-[50%] mx-auto '>
-                <div className='border p-6'>
+            <div className='lg:w-[50%] mx-auto  w-[90%]'>
+                <div className='border lg:p-6 p-2'>
                     <h4 className='text-center text-lg font-bold'>Completed tasks </h4>
                    {completedTask.length === 0 ? <h2 className='text-center my-20'>No complete task found</h2> : <>
 
